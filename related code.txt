@@ -1,0 +1,48 @@
+1. This java code reads in each word and puts it into the ArrayList:
+This can be used to read the dictionary file
+
+Scanner s = new Scanner(new File("filepath"));
+ArrayList<String> list = new ArrayList<String>();
+while (s.hasNext()){
+    list.add(s.next());
+}
+s.close();
+
+
+2. This java code will read one line at a time
+This can be used to read the testing document, which contains mutiple lines of text, each line contains mutiple words
+
+FileInputStream fstream = new FileInputStream("textfile.txt");
+
+BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+
+String strLine;
+
+//Read File Line By Line
+while ((strLine = br.readLine()) != null)   {
+  // Print the content on the console
+  System.out.println (strLine);
+}
+
+//Close the input stream
+br.close();
+
+try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+    String line;
+    while ((line = br.readLine()) != null) {
+       // process the line.
+    }
+}
+
+
+3. This java code will parse a line with mutiple words into tokens, saved in an array of strings
+This can be used to parse the line read from testing document
+
+String s = "I want to walk my dog";
+String[] arr = s.split(" "); 
+
+for(i=0;i<arr.length;i++)
+{
+	test = arr[i].toLower();
+        if(dict.search(test)) xxx;
+}
